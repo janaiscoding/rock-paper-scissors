@@ -22,8 +22,18 @@ A basic rock paper scissors has been created.
 
 
 
-Things I can do in the future: 
-- Create an error message if player inputs something wrong (completed)
-- Complete the game on the web
-- Assign a "how many times you want to play" to the game() function
-- Create a "play again" option
+Future plans: 
+1. Create an error message if player inputs something wrong (completed)
+2. Complete the game on the web
+3. Assign a "how many times you want to play" to the game() function
+4. Create a "play again" option
+
+Future Plan 1. 
+- I checked after converting to lowercase if the player input is equal to the 3 options, and returned the answer.
+- If not, created an alert which has no return.
+
+Future plan 2. 
+- Create html skeleton: 
+- 1 div which allows the player to select the option (created)
+- 1 div which shows the player what the computer selected 
+- 1 div which shows the player who won
