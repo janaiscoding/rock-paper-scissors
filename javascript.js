@@ -1,12 +1,12 @@
 
-
+// randomize and select AI choice
 function getComputerChoice(){
-    const choices =["rock", "paper", "scissors"]; //put the choices into an array
-    let computerInput = choices[Math.floor(Math.random()*choices.length)]; //randomize ai choice through the
+    const choices =["rock", "paper", "scissors"]; 
+    let computerInput = choices[Math.floor(Math.random()*choices.length)]; 
     return computerInput;
 } 
 
-
+// ask user to choose
 function getPlayerChoice(){
     let playerInput = prompt("Rock,Paper or Scissors:")
     if (playerInput.toLowerCase() == "rock" || playerInput.toLowerCase() == "paper" || playerInput.toLowerCase() == "scissors") {
@@ -16,7 +16,7 @@ function getPlayerChoice(){
       }
 
 }
-
+// play one quick round, show win or lose
 function playRound(playerSelection, computerSelection) {
     playerSelection =  getPlayerChoice();
     console.log("You played " + playerSelection.toLowerCase() +".");
@@ -43,6 +43,8 @@ function playRound(playerSelection, computerSelection) {
     } // win situation
     return roundWinner;
   }
+
+  //play 5 games, show final winner
   function game(){
     let playerPoints = 0;
     let computerPoints = 0;
@@ -62,6 +64,8 @@ function playRound(playerSelection, computerSelection) {
         }
 
     }
+
+    //compare match points
     if (playerPoints == computerPoints) {
         console.log("The game results in a tie.");
     }
