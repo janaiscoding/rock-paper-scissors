@@ -2,29 +2,47 @@
     background-color: rgb(59, 47, 47);
     color:rgb(216, 198, 198);
     font-family: sans-serif;
+    box-sizing: border-box;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
 .title {
+    text-align: center;
     font-size: 35px;
 }
 .text {
-    font-size: 18px;
-    font-style:italic;
+    font-size: 25px;
+    font-style: italic;
+    text-align: center;
 }
-body {
-    margin: 0 400px;
+
+.score-container,
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-align: center;
 }
 img {
-    max-width: 250px;
-    max-height: auto;
+    width: 250px;
+    height: auto; 
     border-radius: 10px;
 }
-.player-container {
+.main-selection {
     display: flex;
     gap: 30px;
-    padding: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
 .button:hover {
     cursor: pointer;
-    transform: scale(1.1);
-    
+    transform: scale(1.05);  
   }
