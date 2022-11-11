@@ -1,80 +1,56 @@
+// what we use is
+let computerSelection;
+let playerSelection;
+let computerScore = 0;
+let playerScore = 0;
+const buttons = document.querySelectorAll(".button");
+const comp = document.querySelector(".computer-score");
 
 // randomize and select AI choice
-function getComputerChoice(){
-    const choices =["rock", "paper", "scissors"]; 
-    let computerInput = choices[Math.floor(Math.random()*choices.length)]; 
-    return computerInput;
+  function getComputerChoice(){
+  const choices =["rock", "paper", "scissors"]; 
+  let computerInput = choices[Math.floor(Math.random()*choices.length)]; 
+  return computerInput;
 } 
 
-// ask user to choose
-function getPlayerChoice(){
-    let playerInput = prompt("Rock,Paper or Scissors:")
-    if (playerInput.toLowerCase() == "rock" || playerInput.toLowerCase() == "paper" || playerInput.toLowerCase() == "scissors") {
-        return playerInput;
-      } else {
-        alert("Invalid choice, please choose \"rock\", \"paper\", or \"scissors\"");
-      }
-
-}
-// play one quick round, show win or lose
-function playRound(playerSelection, computerSelection) {
-    playerSelection =  getPlayerChoice();
-    console.log("You played " + playerSelection.toLowerCase() +".");
+buttons.forEach((button) => {
+  button.addEventListener('click',()=>{
+    playerSelection = button.id;
     computerSelection = getComputerChoice();
-    console.log("Computer played " + computerSelection.toLowerCase() +".");
+    playRound(playerSelection, computerSelection);
 
-    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-        roundWinner = "It's a tie!";
-      } // tie situation 
+    if ( playerScore === 5 || computerScore === 5) {
+      finalWinner();
+    }
+  })
+})
 
-    else if  ( 
-        (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper" ) || 
-        (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors" ) ||
-        (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock" ) 
-        ) {
-        roundWinner = "You lose! Boo";
-    } // loss situation 
-    else if ( 
-        (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors" ) ||
-        (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock" ) ||
-        (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper" )
-    ){
-        roundWinner = "You won! Hooray";
-    } // win situation
-    return roundWinner;
-  }
+// on each press, get player selection and computer selection
+function playRound(playerSelection, computerSelection) {
+  const para = document.querySelector('.winner-text');
+  if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+    para.textContent = "It's a tie";
+    } // tie situation 
 
-  //play 5 games, show final winner
-  function game(){
-    let playerPoints = 0;
-    let computerPoints = 0;
-    
-    for (let i = 0; i < 5; i++) {
-        playRound()
-        if ( roundWinner == "You won! Hooray" )
-        {
-            playerPoints++;
-        }
-        else if ( roundWinner == "You lose! Boo" )
-        {
-            computerPoints++;
-        }
-        else if (roundWinner == "It's a tie!") {
-            console.log("Nothing changes!");
-        }
+  else if  ( 
+      (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper" ) || 
+      (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors" ) ||
+      (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock" ) 
+      ) {
+        para.textContent = "You lost";
+      computerScore = computerScore++;
+  } // loss situation 
+  else if ( 
+      (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors" ) ||
+      (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock" ) ||
+      (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper" )
+  ){
+    para.textContent = "You won";
+      playerScore = ++playerScore;
+  } // win situation
+ }
+ function finalWinner(){
+    if (computerScore === 5){
 
     }
-
-    //compare match points
-    if (playerPoints == computerPoints) {
-        console.log("The game results in a tie.");
-    }
-    else if (playerPoints > computerPoints) {
-        console.log("Wow, you actually won the game!") 
-    }
-    else if (playerPoints < computerPoints) {
-        console.log("Damn, what a noob... You lost.");
-    }
-    console.log("Your points: "+ playerPoints +" vs Computer's points:" + computerPoints);
-  }
- 
+}

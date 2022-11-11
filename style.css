@@ -46,3 +46,7 @@ img {
     cursor: pointer;
     transform: scale(1.05);  
   }
+  .winner-text {
+    text-align: center;
+    font-size: 40px;
+  }
