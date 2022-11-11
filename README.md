@@ -21,24 +21,8 @@ What I actually learned:
 A basic rock paper scissors has been created. 
 
 
-
-Future plans: 
-1. Create an error message if player inputs something wrong (completed)
-2. Complete the game on the web
-3. Assign a "how many times you want to play" to the game() function
-4. Create a "play again" option
-5. Create a clean, readable code, which doesn't need many comments
-
-Future Plan 1. 
-- I checked after converting to lowercase if the player input is equal to the 3 options, and returned the answer.
-- If not, created an alert which has no return.
-
-Future plan 2. 
-- Create html skeleton: 
-- 1 div which allows the player to select the option (created)
-- 1 div which shows the player what the computer selected 
-- 1 div which shows the player who won
-
-UNDERSTAND THE PROBLEMO: 
-1. everytime a user presses a button, we call the play round function 
-in the play round function we check which button was pressed    
+Part 2, DOM manipulation: 
+- Oh jesus 
+- Each button records button id as player selection, plays game
+- Game plays round, checks score 
+- This can surely be better compressed, I separated a lot of tasks and it doesn't make much sense.
