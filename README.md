@@ -1,5 +1,8 @@
 # rock-paper-scissors
-Project: Rock Paper Scissors ( The Odin Project Assignment )
+Project: Rock Paper Scissors ( The Odin Project Assignment )</br>
+ - [Live Demo](https://janaiscoding.github.io/rock-paper-scissors/)
+
+
 
 Problem Solving time: 
 1. Understand 2. Plan 3. Divide
